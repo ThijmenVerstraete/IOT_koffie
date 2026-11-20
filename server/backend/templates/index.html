@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Koffiemachine</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <main class="card">
+    <h1>☕ Koffiemachine</h1>
+    <p class="status" id="status">Klaar om te zetten</p>
+
+    <!-- Alleen-lezen waarden -->
+    <section class="readouts">
+      <div class="readout">
+        <span class="label">Temperatuur</span>
+        <span class="value"><span id="temperature">--</span> °C</span>
+      </div>
+      <div class="readout">
+        <span class="label">Waterstand</span>
+        <span class="value"><span id="water">--</span> %</span>
+        <div class="bar"><div class="bar-fill" id="water-bar"></div></div>
+      </div>
+    </section>
+
+    <!-- Instellingen -->
+    <section class="controls">
+      <div class="control">
+        <label for="cups">Aantal kopjes: <strong id="cups-value">1</strong></label>
+        <input type="range" id="cups" min="1" max="6" step="1" value="1">
+      </div>
+
+      <div class="control">
+        <label for="strength">Sterkte: <strong id="strength-value">Medium</strong></label>
+        <input type="range" id="strength" min="1" max="3" step="1" value="2">
+        <div class="ticks"><span>Mild</span><span>Medium</span><span>Sterk</span></div>
+      </div>
+    </section>
+
+    <button id="brew-btn" type="button">Koffie zetten</button>
+  </main>
+
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
