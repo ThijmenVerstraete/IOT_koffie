@@ -110,3 +110,16 @@ input[type="range"] {
 #brew-btn:hover:not(:disabled) { background: var(--accent-dark); }
 #brew-btn:active:not(:disabled) { transform: scale(0.98); }
 #brew-btn:disabled { opacity: 0.55; cursor: not-allowed; }
+
+.readout.wide { grid-column: 1 / -1; }
+
+.usage { margin-top: 28px; }
+.usage-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; }
+.usage-head h2 { margin: 0; font-size: 1.1rem; }
+.period { display: flex; gap: 6px; }
+.period-btn {
+  padding: 6px 10px; border: 1px solid var(--track); border-radius: 8px;
+  background: transparent; color: var(--text); font-size: 0.8rem; cursor: pointer;
+}
+.period-btn.active { background: var(--accent); border-color: var(--accent); color: #fff; }
+.chart-wrap { position: relative; height: 220px; }

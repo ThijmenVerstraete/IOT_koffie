@@ -22,6 +22,10 @@
         <span class="value"><span id="water">--</span> %</span>
         <div class="bar"><div class="bar-fill" id="water-bar"></div></div>
       </div>
+      <div class="readout wide">
+        <span class="label">PSoC 6 CapSense-slider</span>
+        <span class="value"><span id="slider">--</span> %</span>
+      </div>
     </section>
 
     <!-- Instellingen -->
@@ -39,8 +43,21 @@
     </section>
 
     <button id="brew-btn" type="button">Koffie zetten</button>
+
+    <section class="usage">
+      <div class="usage-head">
+        <h2>Koffieverbruik</h2>
+        <div class="period">
+          <button type="button" class="period-btn" data-period="hour">24 uur</button>
+          <button type="button" class="period-btn active" data-period="day">7 dagen</button>
+        </div>
+      </div>
+      <div class="chart-wrap"><canvas id="usage-chart"></canvas></div>
+    </section>
   </main>
 
-  <script src="{{ url_for('static', filename='script.js') }}"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+
+  <script type="module" src="{{ url_for('static', filename='script.js') }}"></script>
 </body>
 </html>
